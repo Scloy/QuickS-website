@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QuickS - Soluções em Tecnologia</title>
+    
+    <!-- Favicon (Black Hexagon with Q) -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><path d='M50 5L90 25V75L50 95L10 75V25L50 5Z' fill='black'/><text x='50' y='65' font-family='serif' font-size='40' text-anchor='middle' fill='white' font-weight='bold'>Q</text></svg>">
+    
+    <!-- Google Fonts: Geist (Ultra Modern) & Instrument Serif (Elegant Contrast) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&family=Instrument+Serif:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS (Play CDN) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'ig-canvas': '#F3F4F6',
+                        'ig-dark': '#0A0A0A',
+                        'ig-text': '#1A1A1A',
+                    },
+                    fontFamily: {
+                        serif: ['Instrument Serif', 'serif'],
+                        sans: ['Geist', 'sans-serif'],
+                        mono: ['Geist Mono', 'monospace'],
+                    },
+                }
+            }
+        }
+    </script>
+
+    <link rel="stylesheet" href="style.css?v=10.0">
+</head>
+<body class="bg-ig-canvas text-ig-text font-serif selection:bg-ig-text selection:text-white scroll-smooth">
+
+    <!-- Loading Screen -->
+    <div id="loading-screen" class="fixed inset-0 z-50 flex items-center justify-center bg-ig-canvas transition-all duration-1000 ease-in-out">
+        <div class="relative flex flex-col items-center">
+            <div class="w-16 h-16 rounded-full border-t-2 border-ig-text opacity-20 animate-spin mb-8"></div>
+            <p class="font-sans text-[10px] uppercase tracking-[0.6em] opacity-40">sejam bem vindos a QuickS</p>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav id="navbar" class="fixed top-0 left-0 w-full z-40 transition-all duration-700 px-8 py-6 md:px-16">
+        <div class="max-w-7xl mx-auto flex items-center justify-between">
+            <div class="flex items-center space-x-6 group cursor-pointer" onclick="window.scrollTo(0,0)">
+                <div class="w-12 h-12 overflow-hidden group-hover:scale-105 transition-transform duration-500 flex items-center justify-center">
+                    <div class="logo-mask"></div>
+                </div>
+                <span class="font-sans font-semibold tracking-[0.5em] text-[16px] uppercase pt-1">QuickS</span>
+            </div>
+            
+            <div class="hidden md:flex items-center space-x-12 font-sans text-[11px] uppercase tracking-[0.3em] opacity-60">
+                <a href="#about" class="hover:opacity-100 transition-opacity">Sobre</a>
+                <a href="#services" class="hover:opacity-100 transition-opacity">Serviços</a>
+                <a href="#portfolio" class="hover:opacity-100 transition-opacity">Portfólio</a>
+                <a href="#contact" class="hover:opacity-100 transition-opacity">Contato</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative min-h-screen flex flex-col items-center justify-center px-8 text-center pt-20 overflow-hidden">
+        <!-- Background Watermark -->
+        <div class="absolute inset-0 flex items-center justify-center pointer-events-none opacity-[0.03] select-none z-0">
+            <span class="text-[40vw] font-serif italic leading-none whitespace-nowrap">QUICKS</span>
+        </div>
+
+        <div class="max-w-6xl mx-auto z-10 mb-20">
+            <h1 class="text-7xl md:text-8xl lg:text-[11rem] font-normal leading-[0.9] mb-14 reveal">
+                A <span class="italic font-normal" id="typewriter">QuickS</span>
+            </h1>
+            <p class="font-sans text-xl md:text-2xl font-light tracking-wide max-w-2xl mx-auto opacity-70 leading-relaxed reveal delay-300">
+                "Somos uma empresa de tecnologia que visa criar aplicações, softwares e automações para estabelecimentos gerenciarem e otimizarem melhor seus serviços."
+            </p>
+        </div>
+        
+        <!-- Scroll Indicator -->
+        <div class="absolute bottom-12 left-0 w-full flex flex-col items-center opacity-30 reveal delay-500 z-10">
+            <span class="font-sans text-[10px] uppercase tracking-[0.6em] mb-4">Role para baixo</span>
+            <div class="w-[1px] h-16 bg-ig-text relative overflow-hidden">
+                <div class="absolute top-0 left-0 w-full h-1/2 bg-ig-text animate-scroll-line"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-40 px-8 bg-white/40">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
+                <div class="reveal">
+                    <span class="font-sans text-[11px] uppercase tracking-[0.5em] mb-4 block opacity-40">Nossa Essência</span>
+                    <h2 class="text-6xl md:text-8xl font-normal mb-8 leading-tight italic">Excelência em cada detalhe.</h2>
+                    <p class="font-sans text-xl font-normal leading-relaxed opacity-60 mb-10 max-w-xl">
+                        Nascemos com o propósito de transformar a complexidade tecnológica em simplicidade operacional. Nossa abordagem combina design refinado com engenharia de alta performance.
+                    </p>
+                    <div class="flex space-x-12">
+                        <div>
+                            <p class="text-5xl font-normal mb-1 italic">100%</p>
+                            <p class="font-sans text-[11px] uppercase tracking-[0.2em] opacity-40">Comprometimento</p>
+                        </div>
+                        <div>
+                            <p class="text-5xl font-normal mb-1 italic">+50</p>
+                            <p class="font-sans text-[11px] uppercase tracking-[0.2em] opacity-40">Projetos Ativos</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="relative reveal delay-300">
+                    <div class="aspect-[4/5] bg-neutral-100 overflow-hidden shadow-2xl">
+                        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=2340&auto=format&fit=crop" class="object-cover w-full h-full grayscale opacity-90">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-40 px-8 bg-ig-dark text-white relative overflow-hidden">
+        <div class="absolute inset-0 flex items-center justify-center pointer-events-none opacity-[0.02] select-none z-0">
+            <span class="text-[40vw] font-serif italic leading-none whitespace-nowrap text-white">QUICKS</span>
+        </div>
+
+        <div class="max-w-7xl mx-auto relative z-10">
+            <div class="flex flex-col items-center mb-32 reveal">
+                <span class="font-sans text-[11px] uppercase tracking-[0.6em] mb-4 opacity-40">O QUE FAZEMOS</span>
+                <h2 class="text-5xl md:text-7xl text-center font-normal leading-tight">Soluções tecnológicas<br><span class="italic font-normal">para acelerar seu negócio.</span></h2>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-x-32 md:gap-y-24">
+                <div class="flex gap-8 group reveal">
+                    <div class="w-14 h-14 rounded-full border border-white/10 flex items-center justify-center shrink-0 group-hover:bg-white group-hover:text-ig-dark transition-all duration-500">
+                        <i data-lucide="code-2" class="w-6 h-6"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl mb-4 font-normal tracking-wide">Software Sob Medida</h3>
+                        <p class="font-sans text-base font-normal opacity-50 leading-relaxed max-w-sm">Aplicações personalizadas para os desafios do seu negócio.</p>
+                    </div>
+                </div>
+                <div class="flex gap-8 group reveal delay-100">
+                    <div class="w-14 h-14 rounded-full border border-white/10 flex items-center justify-center shrink-0 group-hover:bg-white group-hover:text-ig-dark transition-all duration-500">
+                        <i data-lucide="cpu" class="w-6 h-6"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl mb-4 font-normal tracking-wide">Automação & IA</h3>
+                        <p class="font-sans text-base font-normal opacity-50 leading-relaxed max-w-sm">Otimize processos com inteligência artificial.</p>
+                    </div>
+                </div>
+                <div class="flex gap-8 group reveal delay-200">
+                    <div class="w-14 h-14 rounded-full border border-white/10 flex items-center justify-center shrink-0 group-hover:bg-white group-hover:text-ig-dark transition-all duration-500">
+                        <i data-lucide="monitor" class="w-6 h-6"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl mb-4 font-normal tracking-wide">Plataformas SaaS</h3>
+                        <p class="font-sans text-base font-normal opacity-50 leading-relaxed max-w-sm">Sistemas escaláveis e de alta performance.</p>
+                    </div>
+                </div>
+                <div class="flex gap-8 group reveal delay-300">
+                    <div class="w-14 h-14 rounded-full border border-white/10 flex items-center justify-center shrink-0 group-hover:bg-white group-hover:text-ig-dark transition-all duration-500">
+                        <i data-lucide="line-chart" class="w-6 h-6"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl mb-4 font-normal tracking-wide">Data & Analytics</h3>
+                        <p class="font-sans text-base font-normal opacity-50 leading-relaxed max-w-sm">Insights claros para decisão estratégica.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="py-40 px-8">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-32 reveal">
+                <div>
+                    <span class="font-sans text-[11px] uppercase tracking-[0.6em] mb-4 block opacity-40">Portfólio</span>
+                    <h2 class="text-6xl md:text-9xl font-normal">Projetos em<br><span class="italic font-normal">destaque.</span></h2>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-32">
+                <div class="group cursor-pointer reveal">
+                    <div class="relative aspect-[16/9] overflow-hidden bg-black/5 mb-8 shadow-lg">
+                        <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?q=80&w=2340&auto=format&fit=crop" class="object-cover w-full h-full grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-1000">
+                    </div>
+                    <h3 class="text-3xl mb-2 font-normal tracking-wide">Nexus CRM</h3>
+                    <p class="font-sans text-[11px] uppercase tracking-[0.3em] opacity-40">Enterprise Dashboard</p>
+                </div>
+                <div class="group cursor-pointer md:mt-24 reveal delay-200">
+                    <div class="relative aspect-[16/9] overflow-hidden bg-black/5 mb-8 shadow-lg">
+                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2426&auto=format&fit=crop" class="object-cover w-full h-full grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-1000">
+                    </div>
+                    <h3 class="text-3xl mb-2 font-normal tracking-wide">EcoManager</h3>
+                    <p class="font-sans text-[11px] uppercase tracking-[0.3em] opacity-40">SaaS Ecosystem</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Compact Contact Section -->
+    <footer id="contact" class="py-24 px-8 bg-ig-text text-white relative overflow-hidden">
+        <div class="absolute inset-0 flex items-center justify-center pointer-events-none opacity-[0.02] select-none z-0">
+            <span class="text-[40vw] font-serif italic leading-none whitespace-nowrap text-white">QUICKS</span>
+        </div>
+
+        <div class="max-w-7xl mx-auto relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-16 items-start">
+                <!-- Formspree Integration -->
+                <div class="lg:col-span-2 reveal">
+                    <h3 class="text-5xl md:text-7xl font-normal mb-10 italic">Solicite um Orçamento</h3>
+                    <form action="https://formspree.io/f/xbdwdrwo" method="POST" id="contact-form" class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div class="group border-b border-white/10 pb-2 focus-within:border-white transition-colors">
+                            <label class="block font-sans text-[10px] uppercase tracking-[0.5em] opacity-40 mb-2">E-mail</label>
+                            <input type="email" name="email" required placeholder="exemplo@empresa.com" class="w-full bg-transparent py-1 focus:outline-none font-sans text-lg placeholder:opacity-20 font-normal">
+                        </div>
+                        <div class="group border-b border-white/10 pb-2 focus-within:border-white transition-colors">
+                            <label class="block font-sans text-[10px] uppercase tracking-[0.5em] opacity-40 mb-2">Seu Nome</label>
+                            <input type="text" name="name" required placeholder="João Silva" class="w-full bg-transparent py-1 focus:outline-none font-sans text-lg placeholder:opacity-20 font-normal">
+                        </div>
+                        <div class="md:col-span-2 group border-b border-white/10 pb-2 focus-within:border-white transition-colors">
+                            <label class="block font-sans text-[10px] uppercase tracking-[0.5em] opacity-40 mb-2">Projeto</label>
+                            <input type="text" name="message" required placeholder="Conte-nos brevemente..." class="w-full bg-transparent py-1 focus:outline-none font-sans text-lg placeholder:opacity-20 font-normal">
+                        </div>
+                        <div class="md:col-span-2">
+                            <button type="submit" class="flex items-center space-x-6 font-sans text-[11px] uppercase tracking-[0.5em] group mt-4">
+                                <span>Enviar</span>
+                                <div class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center group-hover:bg-white group-hover:text-ig-text transition-all">
+                                    <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                                </div>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="space-y-12 reveal delay-300 border-l border-white/5 pl-0 lg:pl-16">
+                    <div>
+                        <h4 class="font-sans text-[11px] uppercase tracking-[0.5em] opacity-40 mb-6">Contatos</h4>
+                        <a href="mailto:quicksystemas@gmail.com" class="text-3xl font-normal hover:opacity-50 block mb-8 italic">quicksystemas@gmail.com</a>
+                        
+                        <div class="space-y-4 font-sans text-sm font-light opacity-70">
+                            <a href="https://api.whatsapp.com/send?phone=5511912386023" target="_blank" class="block hover:opacity-100 transition-opacity">
+                                <span class="block text-[10px] uppercase tracking-widest opacity-40 mb-1">Cauan Jacobs</span>
+                                (11) 91238-6023 <span class="italic opacity-40 ml-2">WhatsApp</span>
+                            </a>
+                            <div class="block">
+                                <span class="block text-[10px] uppercase tracking-widest opacity-40 mb-1">Vinícius Menezes</span>
+                                (13) 99646-1021
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex space-x-8 opacity-30">
+                        <a href="#" class="hover:opacity-100 transition-opacity">
+                            <i data-lucide="instagram" class="w-6 h-6"></i>
+                        </a>
+                    </div>
+                    <p class="font-sans text-[10px] uppercase tracking-[0.5em] opacity-20">&copy; 2026 QuickS Technology</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js?v=10.0"></script>
+</body>
+</html>
